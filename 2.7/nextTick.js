@@ -4,7 +4,7 @@ const fs = require('fs');
 function fileSize (fileName, cb) {
   if (typeof fileName !== 'string') {
     // sync operation
-    //return cb(new TypeError('argument should be string'))
+    // return cb(new TypeError('argument should be string'))
     
     // async
     return process.nextTick(
