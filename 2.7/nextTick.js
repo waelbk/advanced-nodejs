@@ -1,7 +1,12 @@
 const fs = require('fs');
 
+// function should be eather sync or async!
 function fileSize (fileName, cb) {
   if (typeof fileName !== 'string') {
+    // sync operation
+    //return cb(new TypeError('argument should be string'))
+    
+    // async
     return process.nextTick(
       cb,
       new TypeError('argument should be string')
@@ -23,4 +28,4 @@ fileSize(1, (err, size) => {
   console.log(`Size in KB: ${size/1024}`);
 });
 
-console.log('Hello!');
+console.log('Hello!'); // with async flow, logging always!
